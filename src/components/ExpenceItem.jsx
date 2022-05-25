@@ -1,7 +1,7 @@
 import './ExpenceItem.css';
 import ExpenceDate from './ExpenceDate.jsx';
 import Card from './Card';
-function ExpenceItem(props) {
+const ExpenceItem = props => {
     return (
         <Card className="expense-item">
             <ExpenceDate date={props.date} />
@@ -11,6 +11,6 @@ function ExpenceItem(props) {
             </div>
         </Card>
     );
-}
+};
 
 export default ExpenceItem;
