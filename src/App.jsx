@@ -1,7 +1,7 @@
-import react from 'react';
 import Expenses from './components/Expenses';
+import React from 'react';
 function App() {
-    const item = [
+    const items = [
         {
             id: 'element1',
             title: 'Toilet paper',
@@ -27,12 +27,19 @@ function App() {
             date: new Date(2022, 7, 14),
         },
     ];
-    return (
-        <div>
-            <h2>Let's get started!</h2>
-       <Expenses item={item}/>
-        </div>
+    return React.createElement(
+        'div',
+        {},
+        React.createElement('h2', {}, "Let's get started!"),
+        React.createElement(Expenses, {items}, "Let's get started!"),
+
     );
+    // return (
+    //     <div>
+    //         <h2>Let's get started!</h2>
+    //         <Expenses item={item} />
+    //     </div>
+    // );
 }
 
 export default App;
