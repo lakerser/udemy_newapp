@@ -1,4 +1,4 @@
-import Card from './Card.jsx';
+import Card from '../UI/Card';
 import ExpenceItem from './ExpenceItem.jsx';
 import './Expenses.css';
 const Expenses = props => {

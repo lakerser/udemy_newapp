@@ -1,4 +1,5 @@
-import Expenses from './components/Expenses';
+import Expenses from './components/Expenses/Expenses';
+import NewExpense from './components/newExpense/newExpense';
 import React from 'react';
  const App = () => {
     const items = [
@@ -27,19 +28,19 @@ import React from 'react';
             date: new Date(2022, 7, 14),
         },
     ];
-    return React.createElement(
-        'div',
-        {},
-        React.createElement('h2', {}, "Let's get started!"),
-        React.createElement(Expenses, {items}, "Let's get started!"),
+    // return React.createElement(
+    //     'div',
+    //     {},
+    //     React.createElement('h2', {}, "Let's get started!"),
+    //     React.createElement(Expenses, {items}, "Let's get started!"),
 
-    );
-    // return (
-    //     <div>
-    //         <h2>Let's get started!</h2>
-    //         <Expenses item={item} />
-    //     </div>
     // );
+    return (
+        <div>
+            <NewExpense/>
+            <Expenses items={items} />
+        </div>
+    );
 }
 
 export default App;
