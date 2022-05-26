@@ -38,6 +38,10 @@ const ExpenseForm = () => {
             date:  new Date(enteredDate),
         }
         console.log(expenseData);
+        setEnteredTitle('');
+        setEnteredAmount('');
+        setenteredDate('');
+
     }
     return (
         <form onSubmit={submitHandler}>
