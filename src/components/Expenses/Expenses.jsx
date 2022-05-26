@@ -4,30 +4,31 @@ import ExpensesFilter from './ExpensesFilter.jsx';
 import React, { useState } from 'react';
 import './Expenses.css';
 const Expenses = props => {
-    const [year, setYear] = useState(new Date().getFullYear());
+    const [year, setYear] = useState(new Date().getFullYear().toString());
     const onChangeYear = value => {
-        debugger
         setYear(value);
     };
+    const filteredExpenses = props.items.filter(element => {
+        return element.date.getFullYear().toString() === year;
+    });
 
+    let expencesContent = <p>No expenses found.</p>;
+    filteredExpenses.length > 0 &&
+        (expencesContent = filteredExpenses.map(element => {
+            return (
+                <ExpenceItem
+                    title={element.title}
+                    amount={element.amount}
+                    date={element.date}
+                    key={element.id}
+                />
+            );
+        }));
     return (
         <div>
             <Card className="expenses">
                 <ExpensesFilter year={year} setYear={onChangeYear} />
-                {props.items
-                    .filter(element => {
-                        return element.date.getFullYear() == year;
-                    })
-                    .map(element => {
-                        return (
-                            <ExpenceItem
-                                title={element.title}
-                                amount={element.amount}
-                                date={element.date}
-                                key={element.id}
-                            />
-                        );
-                    })}
+                {expencesContent}
             </Card>
         </div>
     );
