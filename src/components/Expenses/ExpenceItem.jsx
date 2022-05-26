@@ -9,14 +9,18 @@ const ExpenceItem = props => {
         setTitle('changed');
     };
     return (
-        <Card className="expense-item">
-            <ExpenceDate date={props.date} />
-            <div className="expense-item__description">
-                <h2>{title}</h2>
-                <div className="expense-item__price">{props.amount}</div>
-            </div>
-            <button hidden onClick={clickHandler}>Change title</button>
-        </Card>
+        <li>
+            <Card className="expense-item">
+                <ExpenceDate date={props.date} />
+                <div className="expense-item__description">
+                    <h2>{title}</h2>
+                    <div className="expense-item__price">{props.amount}</div>
+                </div>
+                <button hidden onClick={clickHandler}>
+                    Change title
+                </button>
+            </Card>
+        </li>
     );
 };
 
