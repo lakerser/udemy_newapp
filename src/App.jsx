@@ -28,6 +28,11 @@ import React from 'react';
             date: new Date(2022, 7, 14),
         },
     ];
+    const addExpenseHandler = (expense) => {
+    console.log(expense);        
+
+    }
+
     // return React.createElement(
     //     'div',
     //     {},
@@ -37,7 +42,7 @@ import React from 'react';
     // );
     return (
         <div>
-            <NewExpense/>
+            <NewExpense onSaveExpenseData ={addExpenseHandler} />
             <Expenses items={items} />
         </div>
     );
