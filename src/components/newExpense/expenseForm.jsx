@@ -1,23 +1,35 @@
 import './expenseForm.css';
+import { useState } from 'react';
 const ExpenseForm = () => {
-    const titleHandlerListener = (event) =>{
-        console.log(event.target.value);
-        console.log('changed')
-    }
+    const [enteredTitle, setEnteredTitle] = useState('');
+    const [enteredAmount, setEnteredAmount] = useState('');
+    const [enteredDate, setenteredDate] = useState('');
+
+    const titleHandlerListener = event => {
+        setEnteredTitle(event.target.value);
+    };
+    const amountHandlerListener = event => {
+        setEnteredAmount(event.target.value);
+       
+    };
+    const dataHandlerListener = event => {
+        setenteredDate(event.target.value);
+        
+    };
     return (
         <form>
             <div className="new-expense__controls">
                 <div className="new-expense__control">
-                    <label >Title</label>
-                    <input onChange={titleHandlerListener} type="text" />
+                    <label>Title</label>
+                    <input value={enteredTitle} onChange={titleHandlerListener} type="text" />
                 </div>
                 <div className="new-expense__control">
                     <label>Amount</label>
-                    <input type="number" min="0.01" step="0.01" />
+                    <input value={enteredAmount} onChange={amountHandlerListener} type="number" min="0.01" step="0.01" />
                 </div>
                 <div className="new-expense__control">
                     <label>Date</label>
-                    <input type="date" min="2019-01-01" max="2022-12-31" />
+                    <input value={enteredDate} onChange={dataHandlerListener} type="date" min="2019-01-01" max="2022-12-31" />
                 </div>
             </div>
             <dir className="new-expense__actions">
