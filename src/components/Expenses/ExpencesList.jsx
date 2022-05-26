@@ -1,5 +1,5 @@
 import ExpenceItem from './ExpenceItem';
-import './ExpencesList.css'
+import './ExpencesList.css';
 const ExpensesList = props => {
     let expencesContent = (
         <h2 className="expenses-list__fallback">No expenses found.</h2>
@@ -15,6 +15,7 @@ const ExpensesList = props => {
                 />
             );
         }));
+        
     return <ul className="expenses-list">{expencesContent}</ul>;
 };
 
