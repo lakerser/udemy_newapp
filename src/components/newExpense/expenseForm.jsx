@@ -62,8 +62,8 @@ const ExpenseForm = (props) => {
                         value={enteredAmount}
                         onChange={amountHandlerListener}
                         type="number"
-                        min="1"
-                        step="1"
+                        min="0.1"
+                        step="0.1"
                     />
                 </div>
                 <div className="new-expense__control">
